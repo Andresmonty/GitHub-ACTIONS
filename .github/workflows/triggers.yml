@@ -39,7 +39,7 @@ jobs:
       - name: Definir nombre
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Definir lenguaje
-        run: echo "LANGUAGE=${{ github.action }}" >> $GITHUB_ENV
+        run: echo "LANGUAGE=${{ inputs.lenguaje_favorito.default }}" >> $GITHUB_ENV
       - name: Correr script
         run: python hello_language.py
   hola-mundo:
