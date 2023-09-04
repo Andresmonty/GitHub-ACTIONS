@@ -8,7 +8,7 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /lesson-086
+RUN go build -o /ecr-test
 
 FROM gcr.io/distroless/base-debian10
 
