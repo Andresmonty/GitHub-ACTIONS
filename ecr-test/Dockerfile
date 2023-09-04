@@ -14,7 +14,7 @@ FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 
-COPY --from=build /lesson-086 /lesson-086
+COPY --from=build /ecr-test /ecr-test
 
 USER nonroot:nonroot
 
