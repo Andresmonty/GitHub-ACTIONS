@@ -42,7 +42,7 @@ jobs:
     # download the Veracode Static Analysis Pipeline scan jar
     - run: curl --silent --show-error --fail -O https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
     - run: unzip -o pipeline-scan-LATEST.zip
-    - run: npm install -g @veracode/pipeline-scan
+    - run: npm install
 
     - uses: actions/setup-java@v3
       with:
