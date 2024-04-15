@@ -19,6 +19,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 permissions:
   contents: read
+  security-events: write
 
 jobs:
   # This workflow contains a job to build and submit pipeline scan, you will need to customize the build process accordingly and make sure the artifact you build is used as the file input to the pipeline scan file parameter
@@ -36,7 +37,7 @@ jobs:
       with:
         repository: ''
 
-    - run: zip -r veracode-scan-target.zip scripts/
+    - run: zip -r veracode-scan-target.zip /scripts
 
     # download the Veracode Static Analysis Pipeline scan jar
     - run: curl --silent --show-error --fail -O https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
