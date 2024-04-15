@@ -10,11 +10,11 @@ name: Veracode Static Analysis Pipeline Scan
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  schedule:
-    - cron: '20 13 * * 6'
+  # pull_request:
+  #   # The branches below must be a subset of the branches above
+  #   branches: [ "main" ]
+  # schedule:
+  #   - cron: '20 13 * * 6'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 permissions:
@@ -36,7 +36,7 @@ jobs:
       with:
         repository: ''
 
-    - run: zip -r veracode-scan-target.zip ./
+    - run: zip -r veracode-scan-target.zip scripts/
 
     # download the Veracode Static Analysis Pipeline scan jar
     - run: curl --silent --show-error --fail -O https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
