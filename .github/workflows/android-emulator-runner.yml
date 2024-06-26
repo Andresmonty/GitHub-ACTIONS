@@ -1,3 +1,7 @@
+name: Android-runner
+on:
+  push:
+    branches: [ "AndroidEmulatorRunner" ] 
 jobs:
   test:
     runs-on: ubuntu-latest
